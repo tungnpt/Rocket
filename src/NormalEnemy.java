@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class NormalEnemy extends Enemy {
     @Override
     public void run(Player player) {
@@ -7,18 +9,13 @@ public class NormalEnemy extends Enemy {
                 .multiply(1.5f);
         this.velocity.set(velocity);
         this.position.addUp(this.velocity);
-        if (this.count == 15) {
-            BulletEnemy bulletEnemy = new BulletEnemy();
-            bulletEnemy.position.set(this.position);
-            bulletEnemy.velocity.set(
-                    (this.velocity.copy().multiply(2f))
-            );
-            this.bulletEnemies.add(bulletEnemy);
-            this.count = 0;
-        } else {
-            this.count += 1;
-        }
+        this.enemyAttack.run(this);
+    }
 
-        this.bulletEnemies.forEach(bulletEnemy -> bulletEnemy.run());
+    public void render(Graphics graphics) {
+        super.render(graphics);
+        ((NormalEnemyShoot) this.enemyAttack)
+                .bulletEnemies
+                .forEach(bulletEnemy -> bulletEnemy.render(graphics));
     }
 }

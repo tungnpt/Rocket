@@ -5,8 +5,7 @@ public class PlayerShoot implements Attack<Player> {
 
     public List<BulletPlayer> bulletPlayers;
     private int count = 0;
-
-
+    
     public PlayerShoot() {
         this.bulletPlayers = new ArrayList<>();
     }
@@ -23,6 +22,5 @@ public class PlayerShoot implements Attack<Player> {
             this.count += 1;
         }
         this.bulletPlayers.forEach(bulletPlayer -> bulletPlayer.run());
-
     }
 }
