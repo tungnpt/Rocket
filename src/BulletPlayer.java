@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class BulletPlayer extends GameObject{
+public class BulletPlayer extends GameObject {
 
     public Vector2D velocity;
 

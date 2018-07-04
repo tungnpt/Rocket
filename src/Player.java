@@ -5,7 +5,7 @@ public class Player extends GameObject {
 
     public Vector2D velocity;
     public double angle = 0.0;
-    public PlayerAttack playerAttack;
+    public Attack playerAttack;
     private Random random = new Random();
 
     public Player() {

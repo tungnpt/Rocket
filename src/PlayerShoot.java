@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerShoot implements PlayerAttack {
+public class PlayerShoot implements Attack<Player> {
 
     public List<BulletPlayer> bulletPlayers;
     private int count = 0;
@@ -22,7 +22,7 @@ public class PlayerShoot implements PlayerAttack {
         } else {
             this.count += 1;
         }
-        this.bulletPlayers.forEach(bulletPlayer ->  bulletPlayer.run());
+        this.bulletPlayers.forEach(bulletPlayer -> bulletPlayer.run());
 
     }
 }

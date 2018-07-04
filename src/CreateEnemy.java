@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 public class CreateEnemy {
-    int countEnemy =0;
+    int countEnemy = 0;
     Random random = new Random();
     List<Enemy> enemies;
 
@@ -18,9 +18,9 @@ public class CreateEnemy {
     public List<Enemy> createEnemy() {
         if (this.countEnemy == 100) {
             Enemy e;
-            if(enemies.size()% 20 == 19){
+            if (enemies.size() % 20 == 19) {
                 e = new SpecialEnemy();
-            }else{
+            } else {
                 e = new NormalEnemy();
             }
             e.position.set(random.nextInt(1025), random.nextInt(601));
@@ -32,6 +32,7 @@ public class CreateEnemy {
         }
         return enemies;
     }
+
     private BufferedImage loadImage(String path) {
         try {
             return ImageIO.read(new File(path));

@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Enemy extends GameObject{
+public abstract class Enemy extends GameObject {
 
     //public Vector2D position;
     public BufferedImage image;
@@ -20,7 +20,7 @@ public abstract class Enemy extends GameObject{
     abstract public void run(Player player);
 
     public void render(Graphics graphics) {
-        graphics.drawImage(this.image, (int)this.position.x, (int)this.position.y, 20, 20, null);
+        graphics.drawImage(this.image, (int) this.position.x, (int) this.position.y, 20, 20, null);
         this.bulletEnemies.forEach(bulletEnemy -> bulletEnemy.render(graphics));
     }
 }

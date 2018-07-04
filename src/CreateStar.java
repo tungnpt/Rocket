@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class CreateStar {
 
-    int countStar =0;
+    int countStar = 0;
     Random random = new Random();
     List<Star> stars;
 
