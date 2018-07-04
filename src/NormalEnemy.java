@@ -8,14 +8,12 @@ public class NormalEnemy extends Enemy {
         this.velocity.set(velocity);
         this.position.addUp(this.velocity);
         if (this.count == 15) {
-            for (double angle = 0.0; angle < 360.0; angle += 360.0 / 10.0) {
-                BulletEnemy bulletEnemy = new BulletEnemy();
-                bulletEnemy.position.set(this.position);
-                bulletEnemy.velocity.set(
-                        (this.velocity.copy().multiply(2f))
-                );
-                this.bulletEnemies.add(bulletEnemy);
-            }
+            BulletEnemy bulletEnemy = new BulletEnemy();
+            bulletEnemy.position.set(this.position);
+            bulletEnemy.velocity.set(
+                    (this.velocity.copy().multiply(2f))
+            );
+            this.bulletEnemies.add(bulletEnemy);
             this.count = 0;
         } else {
             this.count += 1;
